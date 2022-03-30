@@ -1,0 +1,714 @@
+{
+  "id": "1f167196-dd06-4745-8538-87127a0ebc73",
+  "name": "Mobile Phone",
+  "enable": true,
+  "productLines": [
+    {
+      "id": "dd115393-97b1-4cd9-a5b9-03d29269108f",
+      "name": "Mobile Phone",
+      "domainEngineering": {
+        "models": [
+          {
+            "id": "a6a72219-b026-45ab-9302-3d03b3d8a0c1",
+            "name": "Features",
+            "elements": [
+              {
+                "id": "0104fc10-3751-4b98-b455-f320b2a92f16",
+                "type": "RootFeature",
+                "name": "Mobile Phone",
+                "x": 360,
+                "y": 20,
+                "width": 100,
+                "height": 33,
+                "parentId": null,
+                "properties": [
+                  {
+                    "id": "49e11f56-2a50-4dca-a676-6deea53c6afa",
+                    "name": "Selected",
+                    "value": "Undefined",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "comment": "type options",
+                    "possibleValues": "Undefined,Selected,Unselected"
+                  }
+                ]
+              },
+              {
+                "id": "ceb739e0-09f0-46f5-b2a4-5f90d050505c",
+                "type": "AbstractFeature",
+                "name": "Screen",
+                "x": 430,
+                "y": 140,
+                "width": 100,
+                "height": 33,
+                "parentId": null,
+                "properties": [
+                  {
+                    "id": "a39d2e19-bdd2-4ccc-b7fe-8ef0a579fa56",
+                    "name": "Selected",
+                    "value": "Undefined",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "comment": "type options",
+                    "possibleValues": "Undefined,Selected,Unselected"
+                  }
+                ]
+              },
+              {
+                "id": "b7e7cce7-f8af-433a-a1bb-538311543c1b",
+                "type": "AbstractFeature",
+                "name": "Media",
+                "x": 600,
+                "y": 140,
+                "width": 100,
+                "height": 33,
+                "parentId": null,
+                "properties": [
+                  {
+                    "id": "60051c4f-d427-486d-9490-179e77198b9d",
+                    "name": "Selected",
+                    "value": "Undefined",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "comment": "type options",
+                    "possibleValues": "Undefined,Selected,Unselected"
+                  }
+                ]
+              },
+              {
+                "id": "5aff2aeb-9ec1-47d2-bfd8-6a99dc363fbf",
+                "type": "Bundle",
+                "name": "Bundle 1",
+                "x": 600,
+                "y": 240,
+                "width": 100,
+                "height": 50,
+                "parentId": null,
+                "properties": [
+                  {
+                    "id": "ee19ec8d-9ec8-4449-a0ca-718ac1102c74",
+                    "name": "Type",
+                    "value": "Or",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "comment": "type options",
+                    "possibleValues": "And,Or,Xor,Range"
+                  },
+                  {
+                    "id": "5fab2af3-5317-471d-886c-24f61ffb91c7",
+                    "name": "RangeMin",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "Range",
+                    "custom": false,
+                    "display": false
+                  },
+                  {
+                    "id": "8f4ebb5e-ff45-461c-9a89-e06feadce902",
+                    "name": "RangeMax",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "Range",
+                    "custom": false,
+                    "display": false
+                  },
+                  {
+                    "id": "8d3da0c4-0864-4873-b4be-0353e646eaf9",
+                    "name": "Testing",
+                    "type": "Integer",
+                    "custom": false,
+                    "display": true,
+                    "comment": "prueba",
+                    "possibleValues": "1..10"
+                  }
+                ]
+              },
+              {
+                "id": "c8094a7f-b99d-459e-8b93-853c6cfa21b2",
+                "type": "Bundle",
+                "name": "Bundle 1",
+                "x": 430,
+                "y": 240,
+                "width": 100,
+                "height": 50,
+                "parentId": null,
+                "properties": [
+                  {
+                    "id": "12f05a2b-75a6-4842-baf4-fb186a8f5e75",
+                    "name": "Type",
+                    "value": "Xor",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "comment": "type options",
+                    "possibleValues": "And,Or,Xor,Range"
+                  },
+                  {
+                    "id": "bb9eda62-afd9-464d-90f6-5259ed3718a5",
+                    "name": "RangeMin",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "Range",
+                    "custom": false,
+                    "display": false
+                  },
+                  {
+                    "id": "b083b97f-a418-4e8d-8349-d7074b5f836d",
+                    "name": "RangeMax",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "Range",
+                    "custom": false,
+                    "display": false
+                  },
+                  {
+                    "id": "5062baaa-7e9c-42c7-8992-abffc08c0632",
+                    "name": "Testing",
+                    "type": "Integer",
+                    "custom": false,
+                    "display": true,
+                    "comment": "prueba",
+                    "possibleValues": "1..10"
+                  }
+                ]
+              },
+              {
+                "id": "c461af9c-de31-48cd-beec-1a63aee54738",
+                "type": "ConcreteFeature",
+                "name": "Camera",
+                "x": 600,
+                "y": 350,
+                "width": 100,
+                "height": 33,
+                "parentId": null,
+                "properties": [
+                  {
+                    "id": "a604dcc1-3e88-4192-b680-706bd367af3d",
+                    "name": "Selected",
+                    "value": "Undefined",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "comment": "type options",
+                    "possibleValues": "Undefined,Selected,Unselected"
+                  }
+                ]
+              },
+              {
+                "id": "a0524e28-d89f-47fd-9c9d-e6390927aaf2",
+                "type": "ConcreteFeature",
+                "name": "MP3",
+                "x": 720,
+                "y": 350,
+                "width": 100,
+                "height": 33,
+                "parentId": null,
+                "properties": [
+                  {
+                    "id": "bf395809-db77-4b1a-ba30-6993b2db1115",
+                    "name": "Selected",
+                    "value": "Undefined",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "comment": "type options",
+                    "possibleValues": "Undefined,Selected,Unselected"
+                  }
+                ]
+              },
+              {
+                "id": "b992edb4-4da9-4d70-ad27-68261339f666",
+                "type": "ConcreteFeature",
+                "name": "High Resolution",
+                "x": 430,
+                "y": 350,
+                "width": 100,
+                "height": 33,
+                "parentId": null,
+                "properties": [
+                  {
+                    "id": "64255ef3-2ff8-42a0-b7a8-2b8cc612817e",
+                    "name": "Selected",
+                    "value": "Undefined",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "comment": "type options",
+                    "possibleValues": "Undefined,Selected,Unselected"
+                  }
+                ]
+              },
+              {
+                "id": "a222e0c6-3c23-4b6a-aa83-9528e07b5595",
+                "type": "ConcreteFeature",
+                "name": "Color",
+                "x": 310,
+                "y": 350,
+                "width": 100,
+                "height": 33,
+                "parentId": null,
+                "properties": [
+                  {
+                    "id": "8127e03d-93c3-4ff8-b299-7ad2c7e8abc6",
+                    "name": "Selected",
+                    "value": "Undefined",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "comment": "type options",
+                    "possibleValues": "Undefined,Selected,Unselected"
+                  }
+                ]
+              },
+              {
+                "id": "e9c44d1f-4a8a-4552-9570-74967c04b5fe",
+                "type": "ConcreteFeature",
+                "name": "Basic",
+                "x": 190,
+                "y": 350,
+                "width": 100,
+                "height": 33,
+                "parentId": null,
+                "properties": [
+                  {
+                    "id": "ff71c170-1f94-4eae-8bc7-2dfef72bf5a1",
+                    "name": "Selected",
+                    "value": "Undefined",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "comment": "type options",
+                    "possibleValues": "Undefined,Selected,Unselected"
+                  }
+                ]
+              },
+              {
+                "id": "dbc8f4a5-fdcd-48c1-922a-87eac09dd26c",
+                "type": "ConcreteFeature",
+                "name": "GPS",
+                "x": 260,
+                "y": 140,
+                "width": 100,
+                "height": 33,
+                "parentId": null,
+                "properties": [
+                  {
+                    "id": "e53e0fe2-8561-45b2-924c-22b61f7ecd2f",
+                    "name": "Selected",
+                    "value": "Undefined",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "comment": "type options",
+                    "possibleValues": "Undefined,Selected,Unselected"
+                  }
+                ]
+              },
+              {
+                "id": "680b58ec-d786-4690-957a-f01288610300",
+                "type": "ConcreteFeature",
+                "name": "Calls",
+                "x": 90,
+                "y": 140,
+                "width": 100,
+                "height": 33,
+                "parentId": null,
+                "properties": [
+                  {
+                    "id": "7b7641a8-7658-4c28-91ae-43c560e9411b",
+                    "name": "Selected",
+                    "value": "Undefined",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "comment": "type options",
+                    "possibleValues": "Undefined,Selected,Unselected"
+                  }
+                ]
+              }
+            ],
+            "relationships": [
+              {
+                "id": "6dc58e5b-aa5d-4edd-9c21-6387674242fb",
+                "type": "RootFeature_Feature",
+                "name": "RootFeature 1_AbstractFeature 1",
+                "sourceId": "0104fc10-3751-4b98-b455-f320b2a92f16",
+                "targetId": "ceb739e0-09f0-46f5-b2a4-5f90d050505c",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": [
+                  {
+                    "id": "e039669d-28f5-4320-b810-292d45158232",
+                    "name": "Type",
+                    "value": "Mandatory",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "possibleValues": "Mandatory,Optional,Includes,Excludes,IndividualCardinality"
+                  },
+                  {
+                    "id": "5f9e559b-bc0d-442a-b21a-98d84d2d1fb8",
+                    "name": "MinValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  },
+                  {
+                    "id": "c2eac302-bf35-4004-a3df-87a56c84480e",
+                    "name": "MaxValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  }
+                ]
+              },
+              {
+                "id": "b1aff7e3-b0c9-43cf-ad87-329ffabc7a99",
+                "type": "RootFeature_Feature",
+                "name": "RootFeature 1_AbstractFeature 1",
+                "sourceId": "0104fc10-3751-4b98-b455-f320b2a92f16",
+                "targetId": "b7e7cce7-f8af-433a-a1bb-538311543c1b",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": [
+                  {
+                    "id": "25a3c0f2-56d4-4403-b4de-d151b5e8ea5a",
+                    "name": "Type",
+                    "value": "Mandatory",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "possibleValues": "Mandatory,Optional,Includes,Excludes,IndividualCardinality"
+                  },
+                  {
+                    "id": "b6db452b-386c-44c1-b61f-17e035d97716",
+                    "name": "MinValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  },
+                  {
+                    "id": "8e4c009d-7161-4561-8ae8-12fe47196fbf",
+                    "name": "MaxValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  }
+                ]
+              },
+              {
+                "id": "f57fcd9a-3f95-4dbb-8946-4fced8f25803",
+                "type": "RootFeature_Feature",
+                "name": "RootFeature 1_ConcreteFeature 1",
+                "sourceId": "0104fc10-3751-4b98-b455-f320b2a92f16",
+                "targetId": "680b58ec-d786-4690-957a-f01288610300",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": [
+                  {
+                    "id": "93f3a1b5-9556-4278-a536-a022601d6e31",
+                    "name": "Type",
+                    "value": "Mandatory",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "possibleValues": "Mandatory,Optional,Includes,Excludes,IndividualCardinality"
+                  },
+                  {
+                    "id": "688df566-00ce-4d5a-93db-b03bbcebcd5e",
+                    "name": "MinValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  },
+                  {
+                    "id": "e80fbefd-a5f0-404b-b14e-4c7c070159f4",
+                    "name": "MaxValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  }
+                ]
+              },
+              {
+                "id": "f332f5a4-89ed-408a-89bd-b397ea13af6d",
+                "type": "RootFeature_Feature",
+                "name": "RootFeature 1_ConcreteFeature 1",
+                "sourceId": "0104fc10-3751-4b98-b455-f320b2a92f16",
+                "targetId": "dbc8f4a5-fdcd-48c1-922a-87eac09dd26c",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": [
+                  {
+                    "id": "bf6843ee-97be-4d27-8ebd-bc02154f0015",
+                    "name": "Type",
+                    "value": "Mandatory",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "possibleValues": "Mandatory,Optional,Includes,Excludes,IndividualCardinality"
+                  },
+                  {
+                    "id": "c51ab758-6c1f-4b1c-8993-86090eaa8834",
+                    "name": "MinValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  },
+                  {
+                    "id": "243a4326-a493-4ef2-99cc-f6f06c2aeff4",
+                    "name": "MaxValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  }
+                ]
+              },
+              {
+                "id": "64c87852-8c12-4787-b191-0220d904decd",
+                "type": "AbstractFeature_Feature",
+                "name": "AbstractFeature 1_And",
+                "sourceId": "ceb739e0-09f0-46f5-b2a4-5f90d050505c",
+                "targetId": "c8094a7f-b99d-459e-8b93-853c6cfa21b2",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": [
+                  {
+                    "id": "f2cd222e-d215-42bc-bf97-a7e1b23e2fa1",
+                    "name": "Type",
+                    "value": "Mandatory",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "possibleValues": "Mandatory,Optional,Includes,Excludes,IndividualCardinality"
+                  },
+                  {
+                    "id": "4344901a-bd8f-491d-b185-aae06aa10c67",
+                    "name": "MinValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  },
+                  {
+                    "id": "48ad74ce-ca83-44f8-b296-68d10b30c108",
+                    "name": "MaxValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  }
+                ]
+              },
+              {
+                "id": "b53fc880-0e9a-485f-98f6-5d04cddaa3e0",
+                "type": "AbstractFeature_Feature",
+                "name": "AbstractFeature 1_And",
+                "sourceId": "b7e7cce7-f8af-433a-a1bb-538311543c1b",
+                "targetId": "5aff2aeb-9ec1-47d2-bfd8-6a99dc363fbf",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": [
+                  {
+                    "id": "eb7c6e2a-c887-4cf5-bf41-67c32e4639e2",
+                    "name": "Type",
+                    "value": "Mandatory",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "possibleValues": "Mandatory,Optional,Includes,Excludes,IndividualCardinality"
+                  },
+                  {
+                    "id": "d2a6faaa-4712-4895-ab1f-381dc22a049d",
+                    "name": "MinValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  },
+                  {
+                    "id": "103a4694-6cf1-4f4c-b0a9-e749470d8884",
+                    "name": "MaxValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  }
+                ]
+              },
+              {
+                "id": "730c38da-ef8f-407a-b142-1f3906cfbff2",
+                "type": "Bundle_Feature",
+                "name": "And_ConcreteFeature 1",
+                "sourceId": "5aff2aeb-9ec1-47d2-bfd8-6a99dc363fbf",
+                "targetId": "c461af9c-de31-48cd-beec-1a63aee54738",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": []
+              },
+              {
+                "id": "fba6e273-baab-4e43-afd3-1a31a4a55f35",
+                "type": "Bundle_Feature",
+                "name": "And_ConcreteFeature 1",
+                "sourceId": "5aff2aeb-9ec1-47d2-bfd8-6a99dc363fbf",
+                "targetId": "a0524e28-d89f-47fd-9c9d-e6390927aaf2",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": []
+              },
+              {
+                "id": "5e173320-58b6-43af-a36c-4008a7bf72cd",
+                "type": "Bundle_Feature",
+                "name": "And_ConcreteFeature 1",
+                "sourceId": "c8094a7f-b99d-459e-8b93-853c6cfa21b2",
+                "targetId": "b992edb4-4da9-4d70-ad27-68261339f666",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": []
+              },
+              {
+                "id": "4ad3b6ad-56e4-4035-8388-157c9eba6e4f",
+                "type": "Bundle_Feature",
+                "name": "And_ConcreteFeature 1",
+                "sourceId": "c8094a7f-b99d-459e-8b93-853c6cfa21b2",
+                "targetId": "a222e0c6-3c23-4b6a-aa83-9528e07b5595",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": []
+              },
+              {
+                "id": "c737b970-4784-4719-aec5-3fb1bbcf25af",
+                "type": "Bundle_Feature",
+                "name": "And_ConcreteFeature 1",
+                "sourceId": "c8094a7f-b99d-459e-8b93-853c6cfa21b2",
+                "targetId": "e9c44d1f-4a8a-4552-9570-74967c04b5fe",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": []
+              },
+              {
+                "id": "6bd3365b-9d81-48d3-a8c1-e4ea0e9ef9fd",
+                "type": "ConcreteFeature_Feature",
+                "name": "Basic_GPS",
+                "sourceId": "e9c44d1f-4a8a-4552-9570-74967c04b5fe",
+                "targetId": "dbc8f4a5-fdcd-48c1-922a-87eac09dd26c",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": [
+                  {
+                    "id": "424808f6-5412-4d7a-ab45-a4683d50059d",
+                    "name": "Type",
+                    "value": "Excludes",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "possibleValues": "Mandatory,Optional,Includes,Excludes,IndividualCardinality"
+                  },
+                  {
+                    "id": "d797d2d4-0305-45d7-96f4-0b643164a47e",
+                    "name": "MinValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  },
+                  {
+                    "id": "b1997243-45e2-4c65-bbd9-203cdea30e55",
+                    "name": "MaxValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  }
+                ]
+              },
+              {
+                "id": "d4a64089-043b-41c2-a4c4-1cf40e1de418",
+                "type": "ConcreteFeature_Feature",
+                "name": "Camera_High Resolution",
+                "sourceId": "c461af9c-de31-48cd-beec-1a63aee54738",
+                "targetId": "b992edb4-4da9-4d70-ad27-68261339f666",
+                "points": [],
+                "min": 1,
+                "max": 9999999,
+                "properties": [
+                  {
+                    "id": "7409e1ed-c72d-4170-9eef-cc42ada6ded8",
+                    "name": "Type",
+                    "value": "Includes",
+                    "type": "String",
+                    "custom": false,
+                    "display": true,
+                    "possibleValues": "Mandatory,Optional,Includes,Excludes,IndividualCardinality"
+                  },
+                  {
+                    "id": "be7fbc59-1971-40c6-8a9d-1410e0ad62b7",
+                    "name": "MinValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  },
+                  {
+                    "id": "ca27474d-5756-4d9d-baeb-fd3b95b6c855",
+                    "name": "MaxValue",
+                    "type": "String",
+                    "linked_property": "Type",
+                    "linked_value": "IndividualCardinality",
+                    "custom": false,
+                    "display": false
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "languagesAllowed": []
+      },
+      "applicationEngineering": {
+        "models": [],
+        "languagesAllowed": [],
+        "applications": []
+      }
+    }
+  ]
+}
