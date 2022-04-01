@@ -51,15 +51,15 @@ class MiniZincArithmeticTranslator(translator.Translator):
     @translate_restriction.register
     def _(self, restriction: feature_model.Requires) -> str:
         return (
-            f"constraint (((1 - feature_{restriction.source.identifier}) "
-            + f"+ feature_{restriction.destination[0].identifier}) >= 0);"
+            f"constraint (feature_{restriction.source.identifier} = 1) -> "
+            + f"(feature_{restriction.destination[0].identifier} = 1);"
         )
 
     @translate_restriction.register
     def _(self, restriction: feature_model.Excludes) -> str:
         return (
-            f"constraint (feature_{restriction.source.identifier} "
-            + f"* feature_{restriction.destination[0].identifier} > 0);"
+            f"constraint not (feature_{restriction.source.identifier} = 1 /\\ "
+            + f"feature_{restriction.destination[0].identifier} = 1);"
         )
 
     def build_cardinality_restriction(
@@ -76,8 +76,8 @@ class MiniZincArithmeticTranslator(translator.Translator):
         )
 
         return (
-            f"constraint (feature_{restriction.source.identifier} * {restriction.cardinality.lower_bound} <= {destination_sum})\n"
-            + f"constraint{destination_sum} <= feature_{restriction.source.identifier} * {restriction.cardinality.upper_bound})"
+            f"constraint (feature_{restriction.source.identifier} * {restriction.cardinality.lower_bound} <= {destination_sum}) /\\ "
+            + f"({destination_sum} <= feature_{restriction.source.identifier} * {restriction.cardinality.upper_bound});"
         )
 
     @translate_restriction.register
@@ -92,5 +92,6 @@ class MiniZincArithmeticTranslator(translator.Translator):
     def _(self, restriction: feature_model.Xor) -> str:
         return self.build_cardinality_restriction(restriction)
 
+    @translate_restriction.register
     def _(self, restriction: feature_model.Range) -> str:
         return self.build_cardinality_restriction(restriction)
