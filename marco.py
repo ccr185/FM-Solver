@@ -56,13 +56,10 @@ def main(constraints):
     # constraints.extend([Not(And(f3,f8)),Not(And(f3,f5))])
     csolver = SubsetSolver(constraints)
     msolver = MapSolver(n=csolver.n)
-    for orig, lits in enumerate_sets(csolver, msolver):
-        output = "%s %s" % (orig, lits)
-        print([simplify(lit).hash() for lit in lits])
-        print([lit for lit in lits])
-        print([type(lit) for lit in lits])
-        print([lit.ctx.ref() for lit in lits])
-        print(output)
+    mus_hashes = []
+    for _, lits in enumerate_sets(csolver, msolver):
+        mus_hashes.append([l.hash() for l in lits])
+    return mus_hashes
 
 
 def get_id(x):

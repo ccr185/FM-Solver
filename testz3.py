@@ -1,7 +1,9 @@
+from matplotlib import pyplot
 from fm_solver import feature_model, translator
 from fm_solver.feature_model.restriction import Cardinality
 from swiplserver import PrologMQI, PrologThread
 from z3 import *
+import networkx as nx
 
 from marco import get_id, main
 
@@ -54,14 +56,29 @@ def create_model():
 
 if __name__ == '__main__':
     model = create_model()
-    z3_constraints = translator.Z3Translator(model).translate()
+    z3_constraints, res_hashes, fm_graph = translator.Z3Translator(model).translate()
     # print(z3_constraints)
     # s = Solver()
     # s.add(*z3_constraints)
     # print(s)
     # print(s.check())
-    print([c for c in z3_constraints])
-    print([simplify(c).hash() for c in z3_constraints])
-    print([c.ctx.ref() for c in z3_constraints])
-    print("#############")
-    main(z3_constraints)
+    # print([c for c in z3_constraints])
+    # print([Bool(str(c)).hash() for c in z3_constraints])
+    # print([c.ctx.ref() for c in z3_constraints])
+    # print("#############")
+    mus_hashes = main(z3_constraints)
+    mus_restrictions = []
+    for mus_hash_list in mus_hashes:
+        restrictions = []
+        for constraint_hash in mus_hash_list:
+            try:
+                restrictions.append(res_hashes[constraint_hash])
+            except KeyError:
+                print("something went wrong")
+                exit(1)
+        mus_restrictions.append(restrictions)
+    print("success")
+    print(mus_restrictions)
+    print(fm_graph.edges)
+    nx.draw_circular(fm_graph,with_labels=True)
+    pyplot.show(block=True)
