@@ -21,8 +21,12 @@ class Z3Translator(translator.Translator):
 
         for id, feature in self.feature_model.features.items():
             fm_graph.add_node(id, feature=feature)
-        # for feature in self.feature_model.features.values():
-        #     csp.append(self.translate_feature(feature))
+
+        for feature in self.feature_model.features.values():
+            feat_constraint = self.translate_feature(feature, feats_dict, fm_graph)
+            if feat_constraint is not None:
+                csp.append(feat_constraint)
+                res_hashes[Bool(str(feat_constraint)).hash()] = feature
 
         for restriction in self.feature_model.restrictions:
             z3_constraint = self.translate_restriction(restriction, feats_dict, fm_graph)
@@ -31,14 +35,13 @@ class Z3Translator(translator.Translator):
         
         return csp, res_hashes, fm_graph
 
-    def translate_feature(self, feature: feature_model.Feature) -> str:
+    def translate_feature(self, feature: feature_model.Feature, feats_dict: dict, fm_graph: nx.DiGraph) -> BoolRef:
         if feature.selection == feature_model.Selection.SELECTED:
-            return f"var 0..1: feature_{feature.identifier} = 1;"
-
-        if feature.selection == feature_model.Selection.UNSELECTED:
-            return f"var 0..1: feature{feature.identifier} = 0;"
-
-        return f"var 0..1: feature_{feature.identifier};"
+            return feats_dict[feature.identifier] == True
+        elif feature.selection == feature_model.Selection.UNSELECTED:
+            return feats_dict[feature.identifier] == False
+        else:
+            return None
 
     @functools.singledispatchmethod
     def translate_restriction(self, restriction, feats_dict: dict, fm_graph: nx.DiGraph) -> BoolRef:

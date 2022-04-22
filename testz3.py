@@ -2,11 +2,64 @@ import time
 from matplotlib import pyplot
 from fm_solver import feature_model, translator
 from fm_solver.feature_model.restriction import Cardinality
-from swiplserver import PrologMQI, PrologThread
 from z3 import *
 import networkx as nx
 
 from marco import get_id, main
+
+def hentze2021():
+    # mobile_phone = feature_model.Feature(identifier=1, name="Mobile Phone")
+    # calls = feature_model.Feature(identifier=2, name="Calls")
+    # gps = feature_model.Feature(identifier=3, name="GPS")
+    # screen = feature_model.Feature(identifier=4, name="Screen")
+    # media = feature_model.Feature(identifier=5, name="Media")
+    # basic = feature_model.Feature(identifier=6, name="Basic")
+    # colour = feature_model.Feature(identifier=7, name="Colour")
+    # high_resolution = feature_model.Feature(identifier=8, name="High Resolution")
+    # camera = feature_model.Feature(identifier=9, name="Camera")
+    # mp3 = feature_model.Feature(identifier=10, name="MP3")
+
+    root = feature_model.Feature(identifier=0, name="root")
+    f1 = feature_model.Feature(identifier=1, name="f1") #Carbody
+    f2 = feature_model.Feature(identifier=2, name="f2") #Radio
+    f3 = feature_model.Feature(identifier=3, name="f3") #Gearbox
+    f4 = feature_model.Feature(identifier=4, name="f4") #Ports
+    f5 = feature_model.Feature(identifier=5, name="f5") #Navigation
+    f6 = feature_model.Feature(identifier=6, name="f6") #Bluetooth
+    f7 = feature_model.Feature(identifier=7, name="f7", selection=feature_model.Selection.SELECTED) #Manual
+    f8 = feature_model.Feature(identifier=8, name="f8") #Automatic
+    f9 = feature_model.Feature(identifier=9, name="f9") #USB
+    f10 = feature_model.Feature(identifier=10, name="f10") #CD
+    f11 = feature_model.Feature(identifier=11, name="f11") #DigitalCards
+    f12 = feature_model.Feature(identifier=12, name="f12") #GPSAntenna
+    f13 = feature_model.Feature(identifier=13, name="f13") #Europe
+    f14 = feature_model.Feature(identifier=14, name="f14") #USA
+
+    model = feature_model.FeatureModel(
+        features=[
+            root, f1, f2, f3, f4, f5, f6, f7, f8, f9,
+            f10, f11, f12, f13, f14
+        ],
+        restrictions=[
+            feature_model.Root(source=root),
+            feature_model.Mandatory(source=root, destination=f1),
+            feature_model.Optional(source=root, destination=f2),
+            feature_model.Mandatory(source=root, destination=f3),
+            feature_model.Optional(source=f2, destination=f4),
+            feature_model.Optional(source=f2, destination=f5),
+            feature_model.Optional(source=f2, destination=f6),
+            feature_model.Range(source=f3, destination=[f7,f8], cardinality=Cardinality(lower_bound=1, upper_bound=1)),
+            feature_model.Range(source=f4, destination=[f9,f10], cardinality=Cardinality(lower_bound=1, upper_bound=2)),
+            feature_model.Optional(source=f5, destination=f11),
+            feature_model.Mandatory(source=f5, destination=f12),
+            feature_model.Range(source=f11, destination=[f13,f14], cardinality=Cardinality(lower_bound=1, upper_bound=1)),
+            feature_model.Requires(source=f5, destination=f9),
+            feature_model.Requires(source=f1, destination=f8),
+            feature_model.Requires(source=f11, destination=f7),
+        ],
+    )
+
+    return model
 
 def create_model1():
     # mobile_phone = feature_model.Feature(identifier=1, name="Mobile Phone")
@@ -165,7 +218,7 @@ def artifical_model():
 
 
 if __name__ == '__main__':
-    model = create_model2()
+    model = artifical_model()
     z3_constraints, res_hashes, fm_graph = translator.Z3Translator(model).translate()
     # print(z3_constraints)
     # s = Solver()
